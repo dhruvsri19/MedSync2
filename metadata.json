@@ -1,0 +1,5 @@
+{
+  "name": "MedSync Web",
+  "description": "A medical health dashboard combining HealthKit data visualization with AI-powered lab report analysis and insights using the Gemini API.",
+  "requestFramePermissions": []
+}
