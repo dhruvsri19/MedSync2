@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Plus, FileText, Upload as UploadIcon, Loader2, User, Settings, Activity, Weight, Calendar, ShieldCheck, AlertCircle, Info, CheckCircle, Trash2, Edit2, ChevronDown, Users, AlertTriangle, X } from 'lucide-react';
 import { FamilyMember, LabReport, Insight } from '../types';

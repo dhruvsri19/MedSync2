@@ -1,4 +1,5 @@
 
+
 /**
  * Auth Service
  * Handles Google Sign-In integration using Google Identity Services (GIS).
@@ -26,7 +27,7 @@ const getRuntimeClientId = () => {
   const stored = localStorage.getItem('medsync_debug_client_id');
   if (stored) return stored;
   
-  return getEnvVar('REACT_APP_GOOGLE_CLIENT_ID') || "";
+  return getEnvVar('REACT_APP_GOOGLE_CLIENT_ID') || "128787074502-k50i85ul8qhdcql9r75vel41cnnj904o.apps.googleusercontent.com";
 };
 
 export const setRuntimeClientId = (id: string) => {

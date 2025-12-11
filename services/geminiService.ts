@@ -82,6 +82,7 @@ export const analyzeLabReport = async (
     throw new Error("Failed to analyze report");
   }
 };
+
 export const analyzeInjury = async (
   fileBase64: string,
   mimeType: string
