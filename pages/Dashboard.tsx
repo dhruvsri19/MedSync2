@@ -1,4 +1,4 @@
-
+// Dashboard
 import React, { useState } from 'react';
 import { Heart, Activity, Moon, Flame, ArrowUpRight, ArrowDownRight, X, BarChart as BarChartIcon } from 'lucide-react';
 import { AppRoute, HealthMetric } from '../types';
