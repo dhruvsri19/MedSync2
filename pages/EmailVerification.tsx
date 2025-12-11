@@ -1,7 +1,6 @@
-
+//Email Verification
 import React, { useState, useEffect, useRef } from 'react';
 import { Mail, RefreshCw, ArrowRight, AlertCircle, ArrowLeft } from 'lucide-react';
-
 interface EmailVerificationProps {
   email: string;
   onVerifySuccess: () => void;
