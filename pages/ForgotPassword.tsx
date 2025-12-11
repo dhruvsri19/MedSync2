@@ -40,7 +40,6 @@ export const ForgotPassword: React.FC<ForgotPasswordProps> = ({ onNavigate }) =>
     }
     return () => clearInterval(timer);
   }, [cooldown]);
-
   // --- STEP 1: REQUEST OTP (EMAIL) ---
   const handleRequestEmailOtp = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,7 +53,6 @@ export const ForgotPassword: React.FC<ForgotPasswordProps> = ({ onNavigate }) =>
       setIsLoading(false);
       return;
     }
-
     // SIMULATE API CALL
     setTimeout(() => {
       setIsLoading(false);
@@ -64,7 +62,6 @@ export const ForgotPassword: React.FC<ForgotPasswordProps> = ({ onNavigate }) =>
       setMessage(`We've sent a 6-digit code to ${email}. It expires in 10 minutes.`);
     }, 1500);
   };
-
   // --- STEP 1.5: REQUEST OTP (SMS) ---
   const handleRequestSmsOtp = async (e: React.FormEvent) => {
     e.preventDefault();
