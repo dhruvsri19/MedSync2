@@ -1,4 +1,3 @@
-
 /**
  * HealthKit & Google Fit Service
  * 
