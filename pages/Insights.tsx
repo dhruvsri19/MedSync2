@@ -3,14 +3,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Brain, AlertCircle, CheckCircle, Info, Share2, Loader2, Send, Bot, User, MessageCircle, X, ArrowRight } from 'lucide-react';
 import { Insight, HealthMetric, LabReport, ChatMessage, AppRoute } from '../types';
 import { generateHealthInsights, chatWithMedCoach } from '../services/geminiService';
-
 interface InsightsProps {
   metrics: HealthMetric[];
   reports: LabReport[];
   initialAction?: string | null;
   onNavigate: (route: AppRoute) => void;
 }
-
 export const Insights: React.FC<InsightsProps> = ({ metrics, reports, initialAction, onNavigate }) => {
   // Insights State
   const [insights, setInsights] = useState<Insight[]>([]);
