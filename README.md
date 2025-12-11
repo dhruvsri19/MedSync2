@@ -1,9 +1,24 @@
+🌐 MedSync — Unified Digital Health Platform with AI Insights
+
+A web-based platform that centralizes your wearable data, lab reports, and health history into one secure, AI-powered health timeline.
+Built with Next.js, Supabase, and AI intelligence, MedSync helps users understand their health better and prepares them for smarter doctor consultations.
+
+
+
+
+
+
+
+
+
+
+
 <div align="center">
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
 # Run and deploy your AI Studio app
-
+   
 This contains everything you need to run your app locally.
 
 View your app in AI Studio: https://ai.studio/apps/drive/1SJke45xXgbzy0AVhjZCJLWJj3UGrzM6k
@@ -16,5 +31,5 @@ View your app in AI Studio: https://ai.studio/apps/drive/1SJke45xXgbzy0AVhjZCJLW
 1. Install dependencies:
    `npm install`
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+3. 3. Run the app:
    `npm run dev`
