@@ -1,10 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
     <title>MedSync</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -31,8 +34,7 @@
     </script>
     <style>
       body {
-        background-color: #0f172a; /* medical.dark */
-        color: #f8fafc;
+        /* Background managed by App.tsx for dark mode support */
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       }
       /* Custom scrollbar for webkit */
@@ -41,14 +43,20 @@
         height: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #1e293b; 
+        background: transparent; 
       }
       ::-webkit-scrollbar-thumb {
-        background: #334155; 
+        background: #94a3b8; 
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #475569; 
+        background: #64748b; 
+      }
+      .dark ::-webkit-scrollbar-track {
+        background: #1e293b;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+         background: #334155;
       }
     </style>
   <script type="importmap">

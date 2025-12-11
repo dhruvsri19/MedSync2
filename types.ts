@@ -32,6 +32,14 @@ export interface Medication {
   frequency: 'Once daily' | 'Twice daily' | 'Thrice daily' | 'Custom';
   startDate: string;
   endDate?: string;
+  // Extended fields
+  form?: string;
+  manufacturedDate?: string;
+  expiryDate?: string;
+  manufacturer?: string;
+  batchNumber?: string;
+  notes?: string;
+  photoUrl?: string; // Base64 or URL of the packaging
 }
 
 export interface FamilyMember {
@@ -47,6 +55,8 @@ export interface ChatMessage {
   role: 'user' | 'assistant';
   content: string;
   timestamp: string;
+  actionLabel?: string;
+  actionRoute?: AppRoute;
 }
 
 export interface UserProfile {
@@ -56,6 +66,9 @@ export interface UserProfile {
   age: number;
   gender: string;
   phone?: string;
+  photoUrl?: string;
+  country?: string;
+  emergencyNumber?: string;
 }
 
 export enum AppRoute {
@@ -65,7 +78,11 @@ export enum AppRoute {
   INSIGHTS = 'insights',
   MEDICATIONS = 'medications',
   FAMILY = 'family',
+  QUICK_HELP = 'quick_help',
   SETTINGS = 'settings',
   LOGIN = 'login',
-  SIGNUP = 'signup'
+  SIGNUP = 'signup',
+  PRIVACY_POLICY = 'privacy_policy',
+  FORGOT_PASSWORD = 'forgot_password',
+  EMAIL_VERIFICATION = 'email_verification'
 }

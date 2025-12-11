@@ -1,28 +1,34 @@
+
 import { HealthMetric, LabReport, Insight, Medication, FamilyMember, UserProfile } from '../types';
 
-export const MOCK_METRICS: HealthMetric[] = Array.from({ length: 30 }).map((_, i): HealthMetric => {
-  const date = new Date();
-  date.setDate(date.getDate() - (29 - i));
-  return {
-    id: `m-${i}`,
-    type: 'heart_rate',
-    value: 65 + Math.floor(Math.random() * 15),
-    unit: 'bpm',
-    timestamp: date.toISOString(),
-  };
-}).concat(
-  Array.from({ length: 30 }).map((_, i): HealthMetric => {
+const generateMetrics = (type: 'heart_rate' | 'steps', count: number): HealthMetric[] => {
+  return Array.from({ length: count }).map((_, i) => {
     const date = new Date();
-    date.setDate(date.getDate() - (29 - i));
+    date.setDate(date.getDate() - (count - 1 - i));
+    
+    let value = 0;
+    if (type === 'heart_rate') {
+        // Base 72 + random variation + slight seasonal wave
+        value = 72 + (Math.random() * 10 - 5) + (Math.sin(i / 30) * 3);
+    } else {
+        // Base 8000 + random variation + weekly cycle simulation
+        value = 8000 + (Math.random() * 4000 - 2000) + (Math.cos(i / 7) * 1000);
+    }
+
     return {
-      id: `s-${i}`,
-      type: 'steps',
-      value: 6000 + Math.floor(Math.random() * 5000),
-      unit: 'steps',
+      id: `${type === 'heart_rate' ? 'm' : 's'}-${i}`,
+      type: type,
+      value: Math.round(value),
+      unit: type === 'heart_rate' ? 'bpm' : 'steps',
       timestamp: date.toISOString(),
     };
-  })
-);
+  });
+};
+
+export const MOCK_METRICS: HealthMetric[] = [
+  ...generateMetrics('heart_rate', 365),
+  ...generateMetrics('steps', 365)
+];
 
 export const MOCK_REPORTS: LabReport[] = [
   {
@@ -107,5 +113,7 @@ export const MOCK_USER_PROFILE: UserProfile = {
   email: 'alex.johnson@example.com',
   age: 34,
   gender: 'Male',
-  phone: '+1 (555) 123-4567'
+  phone: '+1 (555) 123-4567',
+  country: 'United States',
+  emergencyNumber: '911'
 };
