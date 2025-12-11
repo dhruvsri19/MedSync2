@@ -10,7 +10,6 @@ interface MedicationsProps {
   onUpdate: (med: Medication) => void;
   onDelete: (id: string) => void;
 }
-
 export const Medications: React.FC<MedicationsProps> = ({ medications, onAdd, onUpdate, onDelete }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingMed, setEditingMed] = useState<Medication | null>(null);
